@@ -1,0 +1,23 @@
+---
+lang: id
+title: "<h3>Salinan Jawaban  Ujian Pertama Mata Kuliah TKL1203 Statistika Dasar<br>
+         Program Studi Teknik Lingkungan Fakultas Teknik Universitas Jember <br>
+         Semester Gasal 2025/2026</h3>"
+author: "`r nama_kandidat()`"
+subtitle: "<h4><i> Dicetak pada `r paste(round(Sys.time()), 'WIB')`</i></h4>"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library(htmltools)
+soalku <- readRDS("soal_ujian_pertama.rds")
+jawabanku <- fbaca_jawaban(username())
+```
+
+```{r, echo=FALSE}
+HTML(paste0("<h5 style='color:brown;'>Soal-", 1:length(soalku),"</h5>", soalku, 
+"<br><h5 style='color:brown;'>Jawaban:</h5><h5 style='color:blue;'><i>", jawabanku, "</i></h5><br>"))
+```
+
+
+
