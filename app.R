@@ -103,6 +103,7 @@ ui <- page_navbar(
                 verbatimTextOutput("hasil_kode_teks")
               ),
               br(),
+              plotOutput("hasil_gambar", height = '100%', width = '100%')
               card(
                 full_screen = TRUE, min_height = 200, fill = TRUE,
                 card_header("Tempat unduh datasaya", class = "kotak_info"),
@@ -429,4 +430,5 @@ shinyApp(
   ui = ui,
   server = server
 )
+
 
