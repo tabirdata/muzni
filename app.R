@@ -1,4 +1,7 @@
 source("fbantu_ujian_statdas.R")
+library(shiny)
+library(bslib)
+library(rmarkdown)
 ui <- page_navbar(
   fillable = TRUE, fillable_mobile = TRUE,
   window_title = "Ujian Statistika Dasar",
@@ -426,3 +429,4 @@ shinyApp(
   ui = ui,
   server = server
 )
+
