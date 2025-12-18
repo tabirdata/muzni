@@ -360,6 +360,13 @@ server <- function(input, output, session) {
         isi_kode_teks = reactive(input$kode)
         fjalankan_teks(isi_kode_teks())
       }) |> bindEvent(input$jalankan)
+      observe({
+      output$hasil_gambar <- renderPlot({
+        req(input$kode)
+        isi_kode_teks = reactive(input$kode)
+        fjalankan_gambar(isi_kode_teks())
+      }) |> bindEvent(input$jalankan)
+
       
       # ganti dengan unduh
       
@@ -430,5 +437,6 @@ shinyApp(
   ui = ui,
   server = server
 )
+
 
 
