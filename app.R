@@ -420,7 +420,10 @@ server <- function(input, output, session) {
           envir = globalenv()
         )
         zip(file,
-            files = paste0("Salinan Jawaban ", nama_kandidat(), ".html"),
+            files = c(paste0("Salinan Jawaban ", nama_kandidat(), ".html"),
+                      paste0(
+                        getwd(), "/kumpulan_jawaban_peserta/", kelas_kandidat(), "_",
+                        username(), "_", nama_kandidat(), ".rds")),
             flags = paste("--password", "mudamulia")
         )
       }
@@ -431,6 +434,7 @@ server <- function(input, output, session) {
     ui = ui,
     server = server
   )
+
 
 
 
